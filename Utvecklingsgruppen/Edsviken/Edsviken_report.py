@@ -2,7 +2,7 @@
 """
 Created on Fri Feb  3 13:19:04 2023
 
-@author: PavlosAslanis
+@author: Martin + Pavlos 
 """
 
 import pandas as pd
@@ -48,9 +48,11 @@ input_df_fixedHeaders = input_df_raw.drop(0)
 ## Identify ">" , "<"
 #####################
 
-mask_smaller = input_df_fixedHeaders.astype(str).apply(lambda x: x.str.contains('<'))
-mask_greater = input_df_fixedHeaders.astype(str).apply(lambda x: x.str.contains('>'))
-
-
+# Create a dictionary of key: column , value: column values as list.
+lists = {col: input_df_fixedHeaders[col].tolist() for col in input_df_fixedHeaders.columns}
+# Find the values that have the symbol '<'.
+result_smaller = {col: [int(val.replace('<','')) for val in lst if '<' in str(val)] for col, lst in lists.items()}
+# Keep only the columns that include '<', and store only the value.
+result_smaller = {col: lst for col, lst in result_smaller.items() if len(lst) > 0}
 
 
