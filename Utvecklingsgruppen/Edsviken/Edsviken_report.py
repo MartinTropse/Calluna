@@ -43,7 +43,7 @@ input_df_fixedHeaders = input_df_raw.copy()
 input_df_fixedHeaders.columns = fixed_header
 
 # Drop the first row
-input_df_fixedHeaders = input_df_raw.drop(0)
+input_df_fixedHeaders = input_df_fixedHeaders.drop(0)
 
 
 #####################
