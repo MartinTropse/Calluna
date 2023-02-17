@@ -65,7 +65,7 @@ for(tranID in unique(bigTax$transektID)){
   fileNm = paste0("Dyktransekt_",tranID,".pdf")
   
   stGG1=ggplot(data=subTax,aes(x=subTax$avsnittID,y=subTax$taxaCoverage, fill = subTax$taxa))
-  stGG1=stGG1 + geom_bar(stat="identity", colour = "white", size=0.05)
+  stGG1=stGG1 + geom_bar(stat="identity", colour = "black", size=0.05)
   stGG1=stGG1 + facet_wrap(~subTax$transektID, scale = "free")
   stGG1=stGG1 + theme_bw(18) + labs(x="Dive squares", y="Coverage")
   stGG1=stGG1 + theme(axis.text.x = element_blank(), legend.title = element_blank(),
