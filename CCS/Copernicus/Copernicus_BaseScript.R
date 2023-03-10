@@ -208,7 +208,7 @@ dfSchi$V2 = topMean
 names(dfSchi) = c("Date", "SechiDepth_Mean")
 write.csv(dfSchi, "SechiDepth_202012_Slite.csv", row.names = FALSE)
 
-
+S
 """
 #Loops for subsetting, calculating and exporting data. Including calculating values 
 #for bottom depths across hetergenous depth, quantile, min, mean and max raster values.
@@ -248,7 +248,7 @@ mntExt = extent(c(xmn, xmx, ymn, ymx))
 mapSeq=seq(from=1, to=length(myMtTime), by=1)
 depthMx = matrix(nrow = dim(data_array)[1], ncol=dim(data_array)[2])
 
-#Finds the maximum depth that has a measured value for each coordinate. The value returned is the "depth category", not an actual depth,
+#Finds the maximum depth in NTCDF4 that has a measured value for each coordinate. The value returned is the "depth category", not an actual depth,
 for(y in seq(1,length(latMt),1)){
   #print(y)
   for(x in seq(1,length(lonMt),1)){
